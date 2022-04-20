@@ -25,6 +25,7 @@ forked from *jtschichold/panwdbl-actions* All creds
 | SSL Abuse IP List | SSLBL 30 days block list. See https://sslbl.abuse.ch/blacklist/ | https://raw.githubusercontent.com/K4S1/pan-dyn-lists/sslabuseiplist/sslabuseiplist.txt |
 | Emerging Threats Known Compromised Hosts | See https://doc.emergingthreats.net/bin/view/Main/CompromisedHost | https://raw.githubusercontent.com/K4S1/pan-dyn-lists/etcompromised/etcompromised.txt |
 | MS365 Teams | Microsoft Teams IP ranges | https://raw.githubusercontent.com/K4S1/pan-dyn-lists/ms365/Teams.txt |
+| MS365 Exchange | Microsoft Exchange IP ranges | https://raw.githubusercontent.com/K4S1/pan-dyn-lists/ms365/Exchange.txt |
 
 
 ## Missing panwdbl Feeds
