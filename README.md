@@ -28,7 +28,7 @@ forked from *jtschichold/panwdbl-actions* All creds
 | MS365 Exchange | Microsoft Exchange IP ranges | https://raw.githubusercontent.com/K4S1/pan-dyn-lists/ms365/Exchange.txt |
 
 
-## Missing panwdbl Feeds
+## Lists to be added Feeds
 
 Some of the feeds that used to be available on pandwbl haven't be ported to this incarnation. Details below:
 
@@ -38,5 +38,4 @@ Some of the feeds that used to be available on pandwbl haven't be ported to this
 | Spamhaus DROP | DROP (Don't Route Or Peer) and EDROP are advisory "drop all traffic" lists, consisting of stolen 'hijacked' netblocks and netblocks controlled entirely by criminals and professional spammers. See http://www.spamhaus.org/drop/. | https://www.spamhaus.org/drop/edrop.txt | Use the original URL |
 | BruteForceBlocker | See http://danger.rulez.sk/index.php/bruteforceblocker/ | http://danger.rulez.sk/projects/bruteforceblocker/blist.php | Use the original URL |
 | Malware Domain List | See http://www.malwaredomainlist.com/ | http://www.malwaredomainlist.com/hostslist/ip.txt | Seems inactive |
-| Emerging Threats RBN | Emerging Threats RBN rules. | Inactive | Inactive |
-| Zeus Tracker Bad IPs List | abuse.ch ZeuS IP blocklist "BadIPs" (excluding hijacked sites and free hosting providers). See https://zeustracker.abuse.ch/blocklist.php | Inactive | Inactive |
+
