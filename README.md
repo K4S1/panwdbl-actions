@@ -1,8 +1,10 @@
-# panwdbl-actions
+# Dynamic IP lists for Palo Alto
 
 *WARNING: USE THIS REPO AT YOUR OWN RISK*
 
 panwdbl implemented with Github Actions based on ideas from [https://github.com/alex/nyt-2020-election-scraper](https://github.com/alex/nyt-2020-election-scraper)
+
+forked from *jtschichold/panwdbl-actions* All creds
 
 ## Details
 
@@ -18,10 +20,11 @@ panwdbl implemented with Github Actions based on ideas from [https://github.com/
 
 | Feed | Description | URL |
 | ---- | ----------- | --- |
-| DShield Top 20 | DShield.org Recommended Block List | https://raw.githubusercontent.com/K4S1/panwdbl-actions/dshield/dshieldbl.txt |
-| Tor Exit Nodes | List of Tor Exit Nodes from https://www.dan.me.uk/tornodes | https://raw.githubusercontent.com/K4S1/panwdbl-actions/tor/exit-nodes.txt |
-| SSL Abuse IP List | SSLBL 30 days block list. See https://sslbl.abuse.ch/blacklist/ | https://raw.githubusercontent.com/K4S1/panwdbl-actions/sslabuseiplist/sslabuseiplist.txt |
-| Emerging Threats Known Compromised Hosts | See https://doc.emergingthreats.net/bin/view/Main/CompromisedHost | https://raw.githubusercontent.com/K4S1/panwdbl-actions/etcompromised/etcompromised.txt |
+| DShield Top 20 | DShield.org Recommended Block List | https://raw.githubusercontent.com/K4S1/pan-dyn-lists/dshield/dshieldbl.txt |
+| Tor Exit Nodes | List of Tor Exit Nodes from https://www.dan.me.uk/tornodes | https://raw.githubusercontent.com/K4S1/pan-dyn-lists/tor/exit-nodes.txt |
+| SSL Abuse IP List | SSLBL 30 days block list. See https://sslbl.abuse.ch/blacklist/ | https://raw.githubusercontent.com/K4S1/pan-dyn-lists/sslabuseiplist/sslabuseiplist.txt |
+| Emerging Threats Known Compromised Hosts | See https://doc.emergingthreats.net/bin/view/Main/CompromisedHost | https://raw.githubusercontent.com/K4S1/pan-dyn-lists/etcompromised/etcompromised.txt |
+| MS365 Teams | Microsoft Teams IP ranges | https://raw.githubusercontent.com/K4S1/pan-dyn-lists/ms365/Teams.txt |
 
 
 ## Missing panwdbl Feeds
