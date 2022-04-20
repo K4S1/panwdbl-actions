@@ -1,4 +1,4 @@
-name: msteamsips
+name: ms365
 
 on:
   push:
@@ -15,10 +15,11 @@ jobs:
       - name: Checkout repo
         uses: actions/checkout@v2
         with:
-          ref: msteamsips
-      - name: Pull the Block List
+          ref: ms365
+      - name: Pull the IP List
         run: |-
-          curl https://endpoints.office.com/endpoints/worldwide\?clientrequestid\=b10c5ed1-bad1-445f-b386-b919946339a7 | jq '.[] | select(.serviceArea == "Skype") | .ips[]? ' | awk '!a[$0]++' | sed 's/"//g' > msteamsips.txt
+          curl https://endpoints.office.com/endpoints/worldwide\?clientrequestid\=b10c5ed1-bad1-445f-b386-b919946339a7 | jq '.[] | select(.serviceArea == "Skype") | .ips[]? ' | awk '!a[$0]++' | sed 's/"//g' > Teams.txt
+          curl https://endpoints.office.com/endpoints/worldwide\?clientrequestid\=b10c5ed1-bad1-445f-b386-b919946339a7 | jq '.[] | select(.serviceArea == "Exchange") | .ips[]? ' | awk '!a[$0]++' | sed 's/"//g' > Exchange.txt
       - name: Commit
         run: |-
           git config user.name "Automated"
