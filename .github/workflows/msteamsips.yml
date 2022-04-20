@@ -16,10 +16,7 @@ jobs:
         uses: actions/checkout@v2
         with:
           ref: msteamsips
-      - name: Create temp dir
-        run: |-
-          mkdir -p temp
-      - name: Pull the Teams ip List
+      - name: Pull the Block List
         run: |-
           curl https://endpoints.office.com/endpoints/worldwide\?clientrequestid\=b10c5ed1-bad1-445f-b386-b919946339a7 | jq '.[] | select(.serviceArea == "Skype") | .ips[]? ' | awk '!a[$0]++' | sed 's/"//g' > msteamsips.txt
       - name: Commit
