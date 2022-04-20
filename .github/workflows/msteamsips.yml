@@ -19,9 +19,9 @@ jobs:
       - name: Create temp dir
         run: |-
           mkdir -p temp
-      - name: Pull the Block List
+      - name: Pull the Teams ip List
         run: |-
-          curl https://endpoints.office.com/endpoints/worldwide\?clientrequestid\=b10c5ed1-bad1-445f-b386-b919946339a7 | jq '.[] | select(.serviceArea == "Skype") | .ips[]? ' | awk '!a[$0]++' | sed 's/"//g' > msTeams.txt
+          curl https://endpoints.office.com/endpoints/worldwide\?clientrequestid\=b10c5ed1-bad1-445f-b386-b919946339a7 | jq '.[] | select(.serviceArea == "Skype") | .ips[]? ' | awk '!a[$0]++' | sed 's/"//g' > msteamsips.txt
       - name: Commit
         run: |-
           git config user.name "Automated"
