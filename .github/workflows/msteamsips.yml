@@ -1,11 +1,11 @@
-name: teams-IPrange
+name: msteamsips
 
 on:
   push:
   workflow_dispatch:
   pull_request:
   schedule:
-    - cron: '30 * * * *'
+    - cron: '3 * * * *'
 
 jobs:
   build:
