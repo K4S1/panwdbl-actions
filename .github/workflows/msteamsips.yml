@@ -12,10 +12,10 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout repo
-        uses: actions/checkout@v2
-        with:
-          ref: msteamsips
+      #- name: Checkout repo
+      #  uses: actions/checkout@v2
+      #  with:
+      #    ref: msteamsips
       - name: Create temp dir
         run: |-
           mkdir -p temp
