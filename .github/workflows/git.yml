@@ -19,7 +19,12 @@ jobs:
       - name: Pull the IP List
         run: |-
           curl https://api.github.com/meta > raw.git.txt
-          foreach i ( $(cat raw.git.txt | jq 'keys[]' | grep -v ssh | grep -v verifiable_password_authentication | sed 's/"//g') ) echo "$i"; cat raw.git.txt | jq '.["'$i'"] | .[] | select(test("^([0-9]{1,3}\\.){3}"))' | sed 's/"//g' > github-$i-ipv4.txt; cat raw.git.txt | jq '.["'$i'"] | .[] | select(test("^(?:[a-fA-F0-9]{1,4}:)"))' | sed 's/"//g' > github-$i-ipv6.txt; end
+          strings=$(cat raw.git.txt | jq 'keys[]' | grep -v ssh | grep -v verifiable_password_authentication | sed 's/\"//g')
+          for i in $strings; do
+             echo $i;
+             cat raw.git.txt | jq '.["'$i'"] | .[] | select(test("^([0-9]{1,3}\\.){3}"))' | sed 's/"//g' > github-$i-ipv4.txt; 
+            cat raw.git.txt | jq '.["'$i'"] | .[] | select(test("^(?:[a-fA-F0-9]{1,4}:)"))' | sed 's/"//g' > github-$i-ipv6.txt; 
+          done
 
       - name: Commit
         run: |-
