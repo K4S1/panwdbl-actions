@@ -1,0 +1,3 @@
+
+
+cat spamhouseDROP | grep -v '^;' | sed -r 's|^([0-9./]*).*|\1|'
