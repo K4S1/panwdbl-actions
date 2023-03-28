@@ -9,8 +9,8 @@ forked from *jtschichold/panwdbl-actions* All creds
 - the workflows are triggered based on the schedule specified in each workflow YAML file
 - each workflow:
     * checkouts the branch of the feed
-    * grabs the original IOC feed
-    * process the IOC feed using a dedicated script contained in the branch
+    * grabs the original range feed
+    * process the range: feed using a dedicated script contained in the branch
     * if there are changes, a commit & push is performed to update the repo contents
 
 ## Feeds
