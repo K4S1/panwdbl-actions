@@ -1,3 +1,6 @@
 
 
 cat spamhouseDROP | grep -v '^;' | sed -r 's|^([0-9./]*).*|\1|'
+
+
+curl https://danger.rulez.sk/projects/bruteforceblocker/blist.php | grep -v '^#' | sed -r 's|^([0-9./]*).*|\1/32|'
