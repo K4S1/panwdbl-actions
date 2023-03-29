@@ -15,14 +15,14 @@ jobs:
       - name: Checkout repo
         uses: actions/checkout@v2
         with:
-          ref: dshield
+          ref: blob
       - name: Create temp dir
         run: |-
           mkdir -p temp
       - name: Pull the Block List
         run: |-
-          curl "https://feeds.dshield.org/block.txt" -o ./temp/block.txt || true
-          ./scripts/dshield-ip-list.py ./temp/block.txt > dshieldbl.txt
+          curl "https://feeds.dshield.org/block.txt" -o ./temp/dsblock.txt || true
+          ./scripts/dshield-ip-list.py ./temp/dsblock.txt > IOC/dshieldbl.txt
       - name: Commit
         run: |-
           git config user.name "Automated"
