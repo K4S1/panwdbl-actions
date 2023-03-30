@@ -1,4 +1,4 @@
-name: MineDshieldTop20
+name: HourJob
 
 on:
   push:
@@ -31,7 +31,7 @@ jobs:
         run: |-
           curl https://www.spamhaus.org/drop/drop.txt | grep -v '^;' | sed -r 's|^([0-9./]*).*|\1|' > IOC/spamhouse-drop.txt
           curl https://www.spamhaus.org/drop/edrop.txt | grep -v '^;' | sed -r 's|^([0-9./]*).*|\1|' > IOC/spamhouse-edrop.txt
-          curl https://www.spamhaus.org/drop/dropv6.txt | grep -v '^;' | sed -r 's|^([0-9./]*).*|\1|' > IOC/spamhouse-dropv6.txt
+          curl https://www.spamhaus.org/drop/dropv6.txt | grep -v '^;' | sed -r 's|^([0-9a-f:/]*).*|\1|' > IOC/spamhouse-dropv6.txt
       - name: Pull the IP List Microsft 365
         run: |-
           mkdir -p MS
