@@ -16,9 +16,9 @@ jobs:
         uses: actions/checkout@v2
         with:
           ref: blob
-      - name: Pull the IP List
+      - name: Pull the IP List Git
         run: |-
-          mkdir git
+          mkdir -p git
           curl https://api.github.com/meta > git/raw.git.txt
           strings=$(cat git/raw.git.txt | jq 'keys[]' | grep -v ssh | grep -v verifiable_password_authentication | sed 's/\"//g')
           for i in $strings; do

@@ -1,0 +1,40 @@
+name: 3-15Runner
+
+on:
+  push:
+  workflow_dispatch:
+  pull_request:
+  schedule:
+    - cron: '13 3,15 * * *'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v2
+        with:
+          ref: blob
+      - name: Create temp dir
+        run: |-
+          mkdir -p temp
+      - name: Pull the Block List emergingthreats
+        run: |-
+          curl "http://rules.emergingthreats.net/open/suricata/rules/compromised-ips.txt" -o ./temp/etcompromised.txt || true
+          ./scripts/collapse-ip-list.py ./temp/etcompromised.txt "http://rules.emergingthreats.net/open/suricata/rules/compromised-ips.txt" > IOC/etcompromised.txt
+      - name: Pull the Block List SSL-Abuse:
+        run: |-
+          curl "https://sslbl.abuse.ch/blacklist/sslipblacklist.csv" -o ./temp/sslabuseiplist.txt || true
+          ./scripts/sslabuse-ip-list.py ./temp/sslabuseiplist.txt "https://sslbl.abuse.ch/blacklist/sslipblacklist.csv" > IOC/sslabuseiplist.txt
+
+      - name: Commit
+        run: |-
+          git config user.name "Automated"
+          git config user.email "actions@users.noreply.github.com"
+          git add -A
+          timestamp=$(date -u)
+          git commit -m "🤖: Latest data: ${timestamp}" || exit 0
+      - name: Push
+        run: |-
+          git push

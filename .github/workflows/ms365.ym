@@ -18,7 +18,7 @@ jobs:
           ref: blob
       - name: Pull the IP List
         run: |-
-          mkdir MS
+          mkdir -p MS
           curl https://endpoints.office.com/endpoints/worldwide\?clientrequestid\=b10c5ed1-bad1-445f-b386-b919946339a7 | jq '.[] | select(.serviceArea == "Skype") | .ips[]? ' | awk '!a[$0]++' | sed 's/"//g' > MS/Teams.txt
           curl https://endpoints.office.com/endpoints/worldwide\?clientrequestid\=b10c5ed1-bad1-445f-b386-b919946339a7 | jq '.[] | select(.serviceArea == "Exchange") | .ips[]? ' | awk '!a[$0]++' | sed 's/"//g' > MS/Exchange.txt
       - name: Commit
