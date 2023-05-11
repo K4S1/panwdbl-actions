@@ -19,24 +19,32 @@ jobs:
       - name: Create temp dir
         run: |-
           mkdir -p temp
+      - name: DNS call sip.btonephone.net
+        run: |-
+          dig sip.btonephone.net +short | while read line; do echo "${line}/32"; done > DNS/sip.btonephone.net
+
       - name: Pull the Block List dshield
         run: |-
           curl "https://feeds.dshield.org/block.txt" -o ./temp/dsblock.txt || true
           ./scripts/dshield-ip-list.py ./temp/dsblock.txt > IOC/dshieldbl.txt
+
       - name: Pull the Block List Torlist
         run: |-
           curl "https://www.dan.me.uk/torlist/?exit" -o ./temp/exit-nodes.txt || true
           ./scripts/collapse-ip-list.py ./temp/exit-nodes.txt "https://www.dan.me.uk/torlist/?exit" > IOC/exit-nodes.txt
+
       - name: Pull the IP List SpamHouse
         run: |-
           curl https://www.spamhaus.org/drop/drop.txt | grep -v '^;' | sed -r 's|^([0-9./]*).*|\1|' > IOC/spamhouse-drop.txt
           curl https://www.spamhaus.org/drop/edrop.txt | grep -v '^;' | sed -r 's|^([0-9./]*).*|\1|' > IOC/spamhouse-edrop.txt
           curl https://www.spamhaus.org/drop/dropv6.txt | grep -v '^;' | sed -r 's|^([0-9a-f:/]*).*|\1|' > IOC/spamhouse-dropv6.txt
+
       - name: Pull the IP List Microsft 365
         run: |-
           mkdir -p MS
           curl https://endpoints.office.com/endpoints/worldwide\?clientrequestid\=b10c5ed1-bad1-445f-b386-b919946339a7 | jq '.[] | select(.serviceArea == "Skype") | .ips[]? ' | awk '!a[$0]++' | sed 's/"//g' > MS/Teams.txt
           curl https://endpoints.office.com/endpoints/worldwide\?clientrequestid\=b10c5ed1-bad1-445f-b386-b919946339a7 | jq '.[] | select(.serviceArea == "Exchange") | .ips[]? ' | awk '!a[$0]++' | sed 's/"//g' > MS/Exchange.txt
+
       - name: Pull the IP List Git
         run: |-
           mkdir -p git
@@ -47,6 +55,7 @@ jobs:
              cat git/raw.git.txt | jq '.["'$i'"] | .[] | select(test("^([0-9]{1,3}\\.){3}"))' | sed 's/"//g' > git/github-$i-ipv4.txt;
             cat git/raw.git.txt | jq '.["'$i'"] | .[] | select(test("^(?:[a-fA-F0-9]{1,4}:)"))' | sed 's/"//g' > git/github-$i-ipv6.txt;
           done
+
 
       - name: Commit
         run: |-
