@@ -25,6 +25,8 @@ jobs:
       - name: DNS call cybergate.cybertwice.com
         run: |-
           dig cybergate.cybertwice.com +short | grep -E '^[[:digit:]]' | while read line; do echo "${line}/32"; done > DNS/cybergate.cybertwice.com
+          dig teams-sipgateway-production-a.cybergate.cybertwice.com +short | grep -E '^[[:digit:]]' | while read line; do echo "${line}/32"; done >> DNS/cybergate.cybertwice.com
+          dig teams-sipgateway-production-b.cybergate.cybertwice.com +short | grep -E '^[[:digit:]]' | while read line; do echo "${line}/32"; done >> DNS/cybergate.cybertwice.com
 
       - name: Pull the Block List dshield
         run: |-
