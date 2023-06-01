@@ -24,7 +24,7 @@ jobs:
           dig sip.btonephone.net +short | while read line; do echo "${line}/32"; done > DNS/sip.btonephone.net
       - name: DNS call cybergate.cybertwice.com
         run: |-
-          dig cybergate.cybertwice.com +short | while read line; do echo "${line}/32"; done > DNS/cybergate.cybertwice.com
+          dig cybergate.cybertwice.com +short | grep -E '^[[:digit:]]' | while read line; do echo "${line}/32"; done > DNS/cybergate.cybertwice.com
 
       - name: Pull the Block List dshield
         run: |-
