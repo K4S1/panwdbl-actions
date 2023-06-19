@@ -27,6 +27,9 @@ jobs:
           dig cybergate.cybertwice.com +short | grep -E '^[[:digit:]]' | while read line; do echo "${line}/32"; done > DNS/cybergate.cybertwice.com
           dig teams-sipgateway-production-a.cybergate.cybertwice.com +short | grep -E '^[[:digit:]]' | while read line; do echo "${line}/32"; done >> DNS/cybergate.cybertwice.com
           dig teams-sipgateway-production-b.cybergate.cybertwice.com +short | grep -E '^[[:digit:]]' | while read line; do echo "${line}/32"; done >> DNS/cybergate.cybertwice.com
+      - name: DNS call ectest.electrocom.dk
+        run: |-
+          dig ectest.electrocom.dk +short | while read line; do echo "${line}/32"; done > DNS/ectest.electrocom.dk
 
       - name: Pull the Block List dshield
         run: |-
