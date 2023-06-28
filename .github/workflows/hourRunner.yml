@@ -30,6 +30,9 @@ jobs:
       - name: DNS call ectest.electrocom.dk
         run: |-
           dig ectest.electrocom.dk +short | while read line; do echo "${line}/32"; done > DNS/ectest.electrocom.dk
+      - name: DNS call cp-redirect.motorolasolutions.com
+        run: |-
+          dig cp-redirect.motorolasolutions.com +short | while read line; do echo "${line}/32"; done > DNS/cp-redirect.motorolasolutions.com
 
       - name: Pull the Block List dshield
         run: |-
