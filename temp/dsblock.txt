@@ -7,7 +7,7 @@
 #     PGP Sign.: https://feeds.dshield.org/block.txt.asc
 #
 #   comments: systems@isc.sans.edu
-#    updated: 2023-12-03T15:00:32.812289
+#    updated: 2023-12-03T16:00:32.706524
 #   
 #    This list summarizes the top 20 attacking class C (/24) subnets
 #   over the last three days. The number of 'attacks' indicates the 
@@ -35,10 +35,10 @@
 167.248.133.0	167.248.133.255	24	646	CENSYS-ARIN-01	US	None
 167.94.138.0	167.94.138.255	24	644	CENSYS-ARIN-01	US	None
 35.203.211.0	35.203.211.255	24	639	GOOGLE-CLOUD-PLATFORM	US	None
-45.128.232.0	45.128.232.255	24	628	AS-PFCLOUD	GB	tittuvi@gmail.com
+45.128.232.0	45.128.232.255	24	629	AS-PFCLOUD	GB	tittuvi@gmail.com
 167.94.145.0	167.94.145.255	24	624	CENSYS-ARIN-02	US	None
 167.94.146.0	167.94.146.255	24	621	CENSYS-ARIN-02	US	None
-194.26.135.0	194.26.135.255	24	617	CHANGWAY-AS	HK	noc@ameurotel.com
+194.26.135.0	194.26.135.255	24	618	CHANGWAY-AS	HK	noc@ameurotel.com
 162.216.149.0	162.216.149.255	24	616	GOOGLE	US	network-abuse@google.com
 35.203.210.0	35.203.210.255	24	613	GOOGLE-CLOUD-PLATFORM	US	None
 146.88.241.0	146.88.241.255	24	611	ARBOR	US	hostmaster@arbor.net
