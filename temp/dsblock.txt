@@ -7,7 +7,7 @@
 #     PGP Sign.: https://feeds.dshield.org/block.txt.asc
 #
 #   comments: systems@isc.sans.edu
-#    updated: 2024-03-13T12:15:36.372938
+#    updated: 2024-03-13T13:15:37.330950
 #   
 #    This list summarizes the top 20 attacking class C (/24) subnets
 #   over the last three days. The number of 'attacks' indicates the 
@@ -36,9 +36,9 @@
 185.242.226.0	185.242.226.255	24	1349	AS49870-BV	NL	abuse@westcall.ru
 176.111.174.0	176.111.174.255	24	1082	CHANGWAY-AS	HK	noc@ameurotel.com
 194.26.135.0	194.26.135.255	24	1067	CHANGWAY-AS	HK	noc@ameurotel.com
-167.94.145.0	167.94.145.255	24	1043	CENSYS-ARIN-02	US	None
+167.94.145.0	167.94.145.255	24	1044	CENSYS-ARIN-02	US	None
 193.163.125.0	193.163.125.255	24	1043	INTERNET-MEASUREMENT	GB	>>UNKNOWN<<
-167.94.146.0	167.94.146.255	24	1041	CENSYS-ARIN-02	US	None
+167.94.146.0	167.94.146.255	24	1042	CENSYS-ARIN-02	US	None
 80.66.83.0	80.66.83.255	24	924	XHOST-INTERNET-SOLUTIONS	GB	>>UNKNOWN<<
 185.233.19.0	185.233.19.255	24	910	HKZTCL-AS-AP Hong Kong Zhengxing Technology Co., Ltd.	HK	>>UNKNOWN<<
 45.93.20.0	45.93.20.255	24	887	CHANGWAY-AS	HK	noc@ameurotel.com
