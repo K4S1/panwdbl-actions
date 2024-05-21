@@ -19,6 +19,9 @@ jobs:
       - name: Create temp dir
         run: |-
           mkdir -p temp
+      - name: DNS call sip.borderlesshub.co
+        run: |-
+          dig sip.borderlesshub.co +short | while read line; do echo "${line}/32"; done > DNS/sip.borderlesshub.co
       - name: DNS call sip.btonephone.net
         run: |-
           dig sip.btonephone.net +short | while read line; do echo "${line}/32"; done > DNS/sip.btonephone.net
