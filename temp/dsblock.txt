@@ -7,7 +7,7 @@
 #     PGP Sign.: https://feeds.dshield.org/block.txt.asc
 #
 #   comments: systems@isc.sans.edu
-#    updated: 2024-11-05T09:15:46.107937
+#    updated: 2024-11-05T10:15:47.251731
 #   
 #    This list summarizes the top 20 attacking class C (/24) subnets
 #   over the last three days. The number of 'attacks' indicates the 
@@ -26,7 +26,7 @@
 #
 #    If a range is assigned to multiple users, the first one is listed. 
 #     
-45.84.89.0	45.84.89.255	24	1617	HUICAST_TELECOM	HK	ripe@newtonad.ro
+45.84.89.0	45.84.89.255	24	1618	HUICAST_TELECOM	HK	ripe@newtonad.ro
 185.242.226.0	185.242.226.255	24	1600	AS49870-BV	NL	abuse@westcall.ru
 206.168.34.0	206.168.34.255	24	1548	-	-	-
 95.214.27.0	95.214.27.255	24	1440	-	-	-
@@ -36,7 +36,7 @@
 198.235.24.0	198.235.24.255	24	1283	GOOGLE-CLOUD-PLATFORM	US	None
 193.163.125.0	193.163.125.255	24	1271	INTERNET-MEASUREMENT	GB	>>UNKNOWN<<
 205.210.31.0	205.210.31.255	24	1235	GOOGLE-CLOUD-PLATFORM	US	None
-147.185.132.0	147.185.132.255	24	1231	GOOGLE-CLOUD-PLATFORM	US	None
+147.185.132.0	147.185.132.255	24	1232	GOOGLE-CLOUD-PLATFORM	US	None
 141.98.11.0	141.98.11.255	24	1032	HOSTBALTIC	LT	>>UNKNOWN<<
 64.62.197.0	64.62.197.255	24	1025	HURRICANE	US	abuse@he.net
 83.222.191.0	83.222.191.255	24	937	GCN-AS GCN AD - Sofia, Bulgaria	BG	noc@gcn.bg
